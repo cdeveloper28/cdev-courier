@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcel Tracking id</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #4caf50, #8bc34a);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #4caf50;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        textarea,
+        input[type="file"] {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus {
+            border-color: #4caf50;
+            outline: none;
+        }
+
+        textarea {
+            resize: none;
+            height: 80px;
+        }
+
+        button {
+            background: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #388e3c;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group-half {
+            display: flex;
+            gap: 10px;
+        }
+
+        .form-group-half input {
+            flex: 1;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Parcel Tracking Form</h1>
+        <form action="admincourier.php" method="POST" enctype="multipart/form-data ">
+            <div class="form-group-half">
+                <input type="text" name="tracking_id" placeholder="Tracking ID" required>
+                <input type="text" name="sender_name" placeholder="Sender Name" required>
+            </div>
+            <textarea name="sender_address" placeholder="Sender Address" required></textarea>
+            <input type="text" name="sender_country" placeholder="Sender Country" required>
+            <div class="form-group-half">
+                <input type="text" name="recipient_name" placeholder="Recipient Name" required>
+                <input type="text" name="recipient_country" placeholder="Recipient Country" required>
+            </div>
+            <textarea name="recipient_address" placeholder="Recipient Address" required></textarea>
+            <input type="text" name="parcel_name" placeholder="Parcel Name" required>
+            <textarea name="parcel_details" placeholder="Parcel Details" required></textarea>
+            <div class="form-group-half">
+                <input type="text" name="current_status" placeholder="Current Status" required>
+                <input type="text" name="location" placeholder="Location" required>
+            </div>
+            <button type="submit">Create Tracking ID</button>
+        </form>
+        <footer>&copy; 2025 Courier Management System. All Rights Reserved.</footer>
+    </div>
+</body>
+</html>
